@@ -1,0 +1,18 @@
+{% extends 'reviews/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2>¿Estás seguro de que deseas eliminar este post?</h2>
+        <p><strong>{{ review.title }}</strong> publicado por {{ review.author.username }} el {{ review.created_at|date:"d M Y, H:i" }}</p>
+        {% if review.cover_image %}
+            <img src="{{ review.cover_image.url }}" alt="Portada de la película" class="img-fluid">
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="{% url 'review_detail' review.pk %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

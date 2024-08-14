@@ -1,0 +1,14 @@
+{% extends 'reviews/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>{% if is_edit %}Editar Comentario{% else %}Agregar Comentario{% endif %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">
+            {% if is_edit %}Guardar Cambios{% else %}Comentar{% endif %}
+        </button>
+    </form>
+</div>
+{% endblock %}

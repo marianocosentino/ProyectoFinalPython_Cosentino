@@ -1,0 +1,35 @@
+{% extends 'reviews/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <!-- Foto de perfil -->
+                        <div class="me-4">
+                            <img src="{% static 'reviews/images/Foto_Perfil.jpg' %}" alt="Foto de Mariano Cosentino" class="img-fluid rounded-circle" style="width: 550px; height: 250px;">
+                        </div>
+                        <!-- Información -->
+                        <div>
+                            <h2 class="card-title mb-4">Sobre Mí</h2>
+                            <p class="card-text fs-5">
+                                ¡Hola! Soy Mariano Cosentino, creador de esta página web. Soy Analista de Sistemas. Me desempeño como profesor de programación y base de datos en un colegio secundario.
+                            </p>
+                            <div class="mt-4">
+                                <a href="https://github.com/marianocosentino" class="btn btn-outline-dark me-2" target="_blank">
+                                    <i class="bi bi-github"></i> GitHub
+                                </a>
+                                <a href="https://linkedin.com/in/marianocosentino" class="btn btn-outline-primary" target="_blank">
+                                    <i class="bi bi-linkedin"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

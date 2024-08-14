@@ -1,0 +1,43 @@
+{% extends 'reviews/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-center mb-4">Mis Reviews</h2>
+        <hr>
+        {% if reviews %}
+            {% for review in reviews %}
+
+                <div class="card mb-4 shadow-sm mx-auto" style="max-width: 750px;">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            {% if review.cover_image %}
+                                <img src="{{ review.cover_image.url }}" class="img-fluid rounded-start" alt="Portada de {{ review.title }}" style="max-width: 250px; max-height: 250px; object-fit: cover;">
+                            {% else %}
+                                <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Sin imagen" style="max-height: 180px; width: 100%; object-fit: cover;">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{ review.title }}</h5>
+                                <p class="card-text"><strong>Calificación: {{ review.calificacion }}/10</strong></p>
+                                <p class="card-text"><small>Publicado el {{ review.created_at|date:"d M Y, H:i" }}</small></p>
+                                {% if review.updated_at > review.created_at %}
+                                <p class="text-success" style="font-size: 0.6rem;">Última modificación: {{ review.updated_at|date:"d M Y, H:i" }}</p>
+                                {% endif %}
+                                <a href="{% url 'review_detail' review.pk %}" class="btn btn-primary mt-3">Leer más</a>
+                                {% if request.user == review.author or request.user.is_staff %}
+                                    <a href="{% url 'review_edit' review.pk %}" class="btn btn-secondary mt-3">Editar</a>
+                                    <a href="{% url 'review_delete' review.pk %}" class="btn btn-danger mt-3">Eliminar</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No realizaste ningún post.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

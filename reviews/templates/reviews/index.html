@@ -1,0 +1,91 @@
+{% extends 'reviews/base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h1 class="display-4">Bienvenido a Movie Reviews</h1>
+            <p class="lead">Descubre y comparte tus opiniones sobre las últimas películas con nuestra comunidad.</p>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://image.tmdb.org/t/p/original/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg" class="d-block w-100" alt="Misión Imposible: Sentencia Mortal Parte Uno">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Top Gun: Maverick</h5>
+                    <p>Acción, emoción y adrenalina.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2024/02/dune-parte-2-3278255.jpg?tf=3840x" class="d-block w-100" alt="Dune: Parte Dos">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Dune: Parte Dos</h5>
+                    <p>La épica saga de ciencia ficción continúa.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/07/oppenheimer-2765695.jpg?tf=3840x" class="d-block w-100" alt="Oppenheimer">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Oppenheimer</h5>
+                    <p>La historia del hombre que cambió el mundo para siempre.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Información adicional sobre la página -->
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-pencil-square" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Crea y Comparte</h5>
+                    <p class="card-text">Escribe tus propias reviews y compártelas con nuestra comunidad de entusiastas del cine.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4 mt-md-0">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-eye-fill" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Explora y Descubre</h5>
+                    <p class="card-text">Explora una gran variedad de películas y descubre lo que otros usuarios tienen que decir.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4 mt-md-0">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-star-fill" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Califica y Comparte</h5>
+                    <p class="card-text">Califica las películas que has visto y ayuda a otros a encontrar su próxima película favorita.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 text-center">
+        <div class="col">
+            <h2>Únete a nuestra comunidad hoy</h2>
+            <p class="lead">Crea una cuenta y empieza a compartir tus opiniones sobre las películas que amas.</p>
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg">Registrarse</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
