@@ -7,9 +7,9 @@ Web con sistema de usuarios con el fin de crear post relacionados a reviews de p
 Adicional al uso normal solo necesitamos Pillow (10.4.0 usado en mi caso)
 
 Comandos utiles:
-    python manage.py makemigrations
-    python manage.py migrate
-    python manage.py runserver
+   - python manage.py makemigrations
+   - python manage.py migrate
+   - python manage.py runserver
 
 ### Funciones
 
