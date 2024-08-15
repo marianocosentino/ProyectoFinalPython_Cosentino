@@ -2,13 +2,14 @@
 
 Web con sistema de usuarios con el fin de crear post relacionados a reviews de peliculas para que estos puedan subir sus opiniones y comentar en otros post.
 
-## Instalación y dependendecias
+## Instalación 
 
 Adicional al uso normal solo necesitamos Pillow (10.4.0 usado en mi caso)
 
-Comandos utiles:
+Comandos:
    - python manage.py makemigrations
    - python manage.py migrate
+   - Opcional si no funcionan los 2 pasos de arriba: python manage.py makemigrations reviews users
    - python manage.py runserver
 
 ### Funciones
