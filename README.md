@@ -4,7 +4,8 @@ Web con sistema de usuarios con el fin de crear post relacionados a reviews de p
 
 ## Instalación 
 
-Adicional al uso normal solo necesitamos Pillow (10.4.0 usado en mi caso)
+`pip install django`
+`pip install pillow`
 
 Comandos:
    - python manage.py migrate
