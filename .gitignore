@@ -18,6 +18,3 @@ __pycache__/
 # Archivos estáticos y de medios
 staticfiles/
 media/
-
-# Archivos de migración de Django
-*/migrations/
